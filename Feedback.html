@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+<head>
+<!--This is Basic HTML5 page for a jQuery Mobile application-->
+<title>jQuery Mobile Application</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/
+jquery.mobile-1.0a4.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+
+	<!--Allow numbers only for the phone number-->
+    <script type="text/javascript">
+        $(document).ready(function () {
+            // Allow only numeric (0-9) in input text --------------------
+            $('[id$=Mock_UserID]').keydown(function (event) {
+                //console.log(event.keyCode);
+                // Allow only backspace, delete, key right and key left
+                if (event.keyCode == 46 || event.keyCode == 8 || event.keyCode == 37 ||
+               event.keyCode == 39) {
+                    // leave it empty.
+                }
+                else {
+                    if (event.keyCode == 13) {
+                        // Enter - Do post back
+                    }
+                        // Ensure that it is a number and stop the keypress
+                    else if (event.keyCode < 48 || event.keyCode > 57) {
+                        event.preventDefault();
+                        // Show message to the user
+                        $("[id$=ErrorDiv]").show();
+                        $("[id$=ErrorDiv]").html("Type numbers only.");
+                    }
+                    else {
+                        // A number is pressed so we hide the message
+                        $("[id$=ErrorDiv]").hide();
+                    }
+                }
+            }); // end keydown
+        }); // end ready
+    </script>
+</head>
+
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<section id="swatch-default" data-role="page">
+ <header data-role="header"><h1>Nando's Restaurant</h1></header>
+  
+<!--This are the tabs for different buttons-->
+<nav data-role="navbar">    
+<ul>        
+    <li><a href="Prac5.html">Home</a></li>        
+    <li><a href="Menu.html">Menus</a></li>        
+    <li><a href="Map.html">Restaurants</a></li>         
+    <li><a href="#" class="ui-btn-active">Feedback</a></li>        
+    <li><a href="Recipes.html">Recipes</a></li>
+</ul> 
+</nav>
+
+<!--The content of the page-->
+<div class="content" data-role="content">
+<h1>Feedback</h1>
+ </div>
+ 
+
+<body>
+<div data-role="main" class="ui-content">
+    <form method="post" action="Feedback.html">
+      <div class="ui-field-contain">
+        <label for="fullname">Customer Name:</label><br />
+        <input type="text" name="fullname" id="fullname"><br />     
+        <label for="contact">Contact Information:</label><br />
+        <input type="text" id="Mock_UserID" /><br />
+    	<span id="ErrorDiv" class="Framework_Error_Message_Span"></span><br />
+        <label for="email">Feedback:</label><br />
+        <textarea rows="4" cols="50" name="comment" form="usrform">Give feedback....</textarea><br>
+        
+      </div>
+      <input type="submit" data-inline="true" value="Submit">
+    </form>
+  </div>
+  
+</body>
+ </section>
+ 
+</html>

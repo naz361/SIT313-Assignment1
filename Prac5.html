@@ -1,0 +1,59 @@
+<!doctype html>
+<html>
+<head>
+
+<!--The script for an alert-->
+<script>
+	function myFunction() {
+		var txt;
+		var r = confirm("SIT313 Assignment 1!\nNazifa REZA.\n213104409.");
+		if (r == true) {
+			txt = "You pressed OK!";
+		} else {
+			txt = "You pressed Cancel!";
+		}
+		document.getElementById("demo").innerHTML = txt;
+	}
+</script>
+
+<!--This is Basic HTML5 page for a jQuery Mobile application-->
+<title>jQuery Mobile Application</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/
+jquery.mobile-1.0a4.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js">
+
+</script></head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+
+<section id="swatch-default" data-role="page">
+ <header data-role="header"><h1>Nando's Restaurant</h1></header>
+  
+  
+<!--This are the tabs for different buttons-->
+<nav data-role="navbar">    
+<ul>        
+    <li><a href="Prac5.html" class="ui-btn-active">Home</a></li>        
+    <li><a href="Menu.html">Menus</a></li>        
+    <li><a href="Map.html">Restaurants</a></li>        
+    <li><a href="Feedback.html">Feedback</a></li>        
+    <li><a href="Recipes.html">Recipes</a></li>    
+</ul> 
+</nav> 
+
+<!--The developers info showing as a swatch e-->
+<button onclick="myFunction()" data-theme="e">Developer's Info</button>
+
+<!--This are some images to be displaed on the home page-->
+ <img src="http://www.nandos.ca/sites/default/files/sites/default/files/PERi-ometer.png" alt="Smiley face" height="500" width="400">
+ <img src="http://10and5.com/wp-content/uploads/2011/10/Nandos-Dalai-Lama-Visa.jpg" alt="Smiley face" height="500"          width="400">
+ <img src="http://d16u7abd4ejqd5.cloudfront.net/S3-upload/PERiometer-Menu.png" alt="Smiley face" height="500"            width="400">
+ 
+<body>
+
+</body>
+ </section>
+ 
+
+</html>

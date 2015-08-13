@@ -1,0 +1,78 @@
+<!doctype html>
+<html>
+
+<head>
+<!--This is Basic HTML5 page for a jQuery Mobile application-->
+<title>jQuery Mobile Application</title>
+<link rel="stylesheet" href="http://code.jquery.com/mobile/1.0a4.1/
+jquery.mobile-1.0a4.1.min.css" />
+<script src="http://code.jquery.com/jquery-1.5.2.min.js"></script>
+<script src="http://code.jquery.com/mobile/1.0a4.1/jquery.mobile-1.0a4.1.min.js"></script>
+
+<script
+src="http://maps.googleapis.com/maps/api/js">
+</script>
+
+
+<!--The default map for Melbourne-->
+<script>
+var myCenter=new google.maps.LatLng(-37.8131869,144.9629796);
+
+function initialize()
+{
+var mapProp = {
+  center: myCenter,
+  zoom:5,
+  mapTypeId: google.maps.MapTypeId.ROADMAP
+  };
+
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+
+var marker = new google.maps.Marker({
+  position: myCenter,
+  title:'Click to zoom'
+  });
+
+marker.setMap(map);
+
+// Zoom to 9 when clicking on marker
+google.maps.event.addListener(marker,'click',function() {
+  map.setZoom(9);
+  map.setCenter(marker.getPosition());
+  });
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+
+</head>
+
+<meta charset="utf-8">
+<title>Untitled Document</title>
+<section id="swatch-default" data-role="page">
+ <header data-role="header"><h1>Nando's Restaurant</h1></header>
+  
+<!--This are the tabs for different buttons-->
+<nav data-role="navbar">    
+    <ul>        
+        <li><a href="Prac5.html">Home</a></li>        
+        <li><a href="Menu.html">Menus</a></li>        
+        <li><a href="#">Restaurant</a></li>        
+        <li><a href="Feedback.html">Feedback</a></li>        
+        <li><a href="Recipe.html" class="ui-btn-active">Recipes</a></li>    
+    </ul> 
+</nav>
+
+<!--The content of the page-->
+<div class="content" data-role="content">
+<h1></h1>
+ </div>
+ 
+<body>
+<div id="googleMap" style="width:500px;height:380px;"></div>
+<!--The ingredients for each dish-->
+
+</body>
+ </section>
+ 
+</html>
